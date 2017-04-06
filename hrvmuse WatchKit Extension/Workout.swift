@@ -140,7 +140,7 @@ class Workout: NSObject, HKWorkoutSessionDelegate {
         // The user will only be presented with the permissions view the first time this is called.
         healthStore.requestAuthorization(toShare: nil, read: Set([heartRateType])) { (granted, error) in
             if (error != nil) {
-                print("request authorization for health failed")
+                print("request authorization for health failed", error!)
             } else {
                 if (granted) {
                     // Authorization granted
